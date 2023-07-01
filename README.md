@@ -19,19 +19,31 @@ For example,
 
                     if the input is "OpenGenus", then it is converted to "opengenus" for BERT uncased while BERT cased takes in "OpenGenus".
 
-Today, the most common approaches to NLI problems include using embeddings and transformers like BERT.in this  we trained a  model via Distributed training of Gpu's and Gpu p 100's rather than cpu and tpu's
+Today, the most common approaches to NLI problems include using embeddings and transformers like BERT.in this  we trained a BERT model for how pairs of sentences (consisting of a premise and a hypothesis) are related.  via Distributed training of Gpu's and Gpu p 100's rather than cpu and tpu's
 
 with
                                                     
                                                     Total params: 177,855,747
 
-for testing we tested model with separate dataset.csv  you can explore it in test.csv file ..
+for testing we tested model with separate dataset.csv with different languages  you can explore it in test.csv file ..
 
 deployment cases we used Gradio interface .taking users input via gradio interface and predicting the results .you view deployment file which is available 
 
 ________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+We'll use the following command to launch training:
 
+                                                !tensorflow & pytorch scripts/code_train.py \
+                                                       --model bert-base-uncased \
+                                                       --model bert-base-mutilingual-cased\
+                                                       --dataset_path train.csv \
+                                                       --lr 1e-4 \
+                                                       --per_device_train_batch_size 32 & 64 \
+                                                       --epochs 10
+
+the training was completed and achieved better results 
+
+                                             
 
 🛠 frameworks and tools used:
 
